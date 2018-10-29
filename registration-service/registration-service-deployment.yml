@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registration-service-deployment
+spec:
+  selector:
+    matchLabels:
+      app: registration-service
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: registration-service
+    spec:
+      containers:
+      - name: registration-service
+        image: colinbut/registration-service:1.0.0
+        ports:
+        - containerPort: 8080
