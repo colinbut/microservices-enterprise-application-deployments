@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registration-email-service-deployment
+spec:
+  selector:
+    matchLabels:
+      app: registration-email-service
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: registration-email-service
+    spec:
+      containers:
+      - name: registration-email-service
+        image: colinbut/registration-email-service:1.0.0
+        ports:
+        - containerPort: 8080
