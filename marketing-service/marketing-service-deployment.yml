@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marketing-service-deployment
+spec:
+  selector:
+    matchLabels:
+      app: marketing-service
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: marketing-service
+    spec:
+      containers:
+      - name: marketing-service
+        image: colinbut/marketing-service:1.0.0
+        ports:
+        - containerPort: 8080
