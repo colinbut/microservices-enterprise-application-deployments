@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: audit-service
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       labels:
