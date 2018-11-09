@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+        app: registration-email-service
+    name: registration-email-service
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: registration-email-service
+    
